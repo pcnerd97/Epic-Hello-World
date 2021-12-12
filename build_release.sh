@@ -16,6 +16,7 @@ rm ./main.o
 
 echo "Build Done! Launching."
 
+mkdir -p ./bin
 mv ./main ./bin/main
 
 ./bin/main

@@ -16,6 +16,7 @@ rm ./main.o
 
 echo "Build Done! Launching."
 
+mkdir -p ./bin
 mv ./main_debug ./bin/main_debug
 
 konsole -e gdb -ex run ./bin/main_debug
