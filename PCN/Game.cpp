@@ -18,13 +18,13 @@ namespace PCN {
     void Game::Start(void){
     
 		
-		if (!font.loadFromFile("fonts/OpenSans-Regular.ttf"))
+		if (!font.loadFromFile("data/fonts/OpenSans-Regular.ttf"))
 		{
 			printf("Could not load font!\n");
 		}
 
 		
-		if (!texture.loadFromFile("textures/texture.jpeg"))
+		if (!texture.loadFromFile("data/textures/texture.jpeg"))
 		{
 			printf("Could not texture!\n");
 		}
@@ -136,7 +136,7 @@ namespace PCN {
     }
     
 	void Game::PlaySound(void){
-		if (!music.openFromFile("audio/music.ogg")){
+		if (!music.openFromFile("data/audio/music.ogg")){
 			printf("Could not load audio file!");
 		}
 		music.play();
