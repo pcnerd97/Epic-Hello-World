@@ -2,13 +2,20 @@
 
 echo "Starting Build!"
 echo "Compiling...."
-g++  -c main.cpp 
-g++  -c PCN/Game.cpp
-g++  -c PCN/Window.cpp
+g++ -c src/main.cpp 
+g++ -c src/PCN/Game.cpp
+g++ -c src/PCN/Window.cpp
 
 echo "Linking...."
-g++ -o main main.o Game.o Window.o -ltgui -lsfml-system -lsfml-graphics -lsfml-audio -lsfml-window
+g++ -g -o main main.o Game.o Window.o -ltgui -lsfml-system -lsfml-graphics -lsfml-audio -lsfml-window
+
+echo "Clean Up...."
+rm ./Game.o
+rm ./Window.o
+rm ./main.o
 
 echo "Build Done! Launching."
 
-./main
+mv ./main ./bin/main
+
+./bin/main
