@@ -1,5 +1,5 @@
 # Epic-Hello-World
- SFML Testing
+ SFML Testing (Linux only for now)
 
 Dependencies
 --------------------------
