@@ -1,12 +1,5 @@
-#ifdef __linux__
-    #include <SFML/Graphics.hpp>
-    #include <SFML/System.hpp>
-#elif _WIN32
-    #include "SFML_WIN/include/SFML/Graphics.hpp"
-    #include "SFML_WIN/include/SFML/System.hpp"
-#else 
-#endif
-
+#include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
 #include <string>
 
 namespace PCN{

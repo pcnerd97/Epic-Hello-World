@@ -1,14 +1,6 @@
-#ifdef __linux__
-    #include <SFML/Graphics.hpp>
-    #include <SFML/System.hpp>
-    #include <SFML/Audio.hpp>
-#elif _WIN32
-    #include <SFML_WIN/include/SFML/Graphics.hpp>
-    #include <SFML_WIN/include/SFML/System.hpp>
-    #include <SFML_WIN/include/SFML/Audio.hpp>
-#else    
-#endif
-
+#include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
+#include <SFML/Audio.hpp>
 #include <TGUI/TGUI.hpp>
 
 #include <iostream>
