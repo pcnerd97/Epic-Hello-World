@@ -26,7 +26,7 @@ namespace PCN {
 		
 		if (!texture.loadFromFile("data/textures/texture.jpeg"))
 		{
-			printf("Could not texture!\n");
+			printf("Could not load texture!\n");
 		}
 
 		camera.reset(sf::FloatRect(0.f, 0.f, SCRWIDTH, SCRHEIGHT));
@@ -58,6 +58,14 @@ namespace PCN {
 		text.setFillColor(sf::Color::Red);
 		text.setOutlineColor(sf::Color::Black);
 		text.setOutlineThickness(10);
+
+		fpsText.setFont(font);
+		fpsText.setString("Hello world");
+		fpsText.setCharacterSize(50); 
+		fpsText.setFillColor(sf::Color::Red);
+		fpsText.setOutlineColor(sf::Color::Black);
+		fpsText.setOutlineThickness(10);
+		fpsText.setPosition(sf::Vector2f(10.f, 10.f));
 
 		PlaySound();
 	
@@ -92,7 +100,7 @@ namespace PCN {
 				case 1:
 					text.setFillColor(sf::Color::Blue);
 					current_color = 2;
-					//camera.zoom(-0.5f);
+					//camera.zoom(0);
 					break;
 
 				case 2:
@@ -104,7 +112,7 @@ namespace PCN {
 				case 3:
 					text.setFillColor(sf::Color::Magenta);
 					current_color = 0;
-					//camera.zoom(-0.5f);
+					//camera.zoom(0);
 					break;
 
 			}
@@ -128,11 +136,19 @@ namespace PCN {
 		gameWindow->clear(text.getFillColor());
 		gameWindow->draw(sprite);
         gameWindow->draw(text);
+		//gameWindow->draw(fpsText);
 
 		gui.add(button);
 		gui.draw();
 
         gameWindow->display();
+
+		float currentTime = clock.restart().asSeconds();
+		float fps = 1.f / currentTime;
+		lastTime = currentTime;
+
+		gameWindow->setTitle("FPS: " + std::to_string(fps));
+
     }
     
 	void Game::PlaySound(void){

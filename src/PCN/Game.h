@@ -30,7 +30,9 @@ namespace PCN{
             sf::Music music;
             sf::Sprite sprite;
             sf::Text text;
+            sf::Text fpsText;
             sf::View camera;
+            sf::Clock clock;
 
             tgui::GuiSFML gui;
             tgui::Button::Ptr button;
@@ -38,6 +40,8 @@ namespace PCN{
             int i = 0;
 	        int color_change = 10;
 	        int current_color = 0;
+
+            float lastTime = 0;
 
     };
 }
