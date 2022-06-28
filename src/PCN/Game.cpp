@@ -4,7 +4,7 @@ namespace PCN {
 
     Game::Game()
     {
-		Window win(SCRWIDTH, SCRHEIGHT, "Test");
+		Window win(SCRWIDTH, SCRHEIGHT, "Epic Hello World!");
 		gameWindow = win.getWindow();
 		Start();
 
